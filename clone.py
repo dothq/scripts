@@ -21,8 +21,7 @@ def main():
 
 def clone_firefox():
     os.system("git clone https://github.com/dothq/ffr -b master firefox")
-    os.system("cd firefox && git remote set-url origin hg::https://hg.mozilla.org/mozilla-unified")
-    os.system("git remote update")
+    os.system("cd firefox && git remote set-url origin hg::https://hg.mozilla.org/mozilla-unified && git remote update")
 
 def clone_dot():
     os.system("git clone https://github.com/dothq/browser dot")
