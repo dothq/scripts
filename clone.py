@@ -20,7 +20,7 @@ def main():
     tip("For more information and help on building, check out the build workflow document.")
 
 def clone_firefox():
-    os.system("git clone https://github.com/dothq/ffr firefox")
+    os.system("git clone https://github.com/dothq/ffr -b master firefox")
 
 def clone_dot():
     os.system("git clone https://github.com/dothq/browser dot")
