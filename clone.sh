@@ -1,5 +1,28 @@
-#!/bin/bash
+#!/bin/sh
 
-OUT_DIR=dot
+throw() {
+    payload="$1"
 
-git clone https://github.com/dothq/ffr $OUT_DIR
+    echo -e "\n$payload\n"
+    exit 1;
+}
+
+info() {
+    payload="$1"
+
+    echo -e "\n\x1b[1;34mINFO\x1b[0m $payload\n"
+}
+
+start_py() {
+    py_bin="$1"
+
+    if which $py_bin > /dev/null 2>&1
+    then
+        info "Cloning..."
+        exec $py_bin clone.py
+    else
+        throw "You will need '$py_bin' installed for this script to run."
+    fi
+}
+
+start_py python3
