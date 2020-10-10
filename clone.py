@@ -14,13 +14,15 @@ def main():
     print("\n")
     info("You are now ready to build Dot Browser!\n")
 
-    info("Building the application can be done via the './build.sh' script.")
-    info("Make sure you sync before you build with the './sync.sh' script.\n")
+    info("Building the application can be done via the './tools/build.sh' script.")
+    info("Make sure you sync before you build with the './tools/sync.sh' script.\n")
 
     tip("For more information and help on building, check out the build workflow document.")
 
 def clone_firefox():
     os.system("git clone https://github.com/dothq/ffr -b master firefox")
+    os.system("cd firefox && git remote set-url origin hg::https://hg.mozilla.org/mozilla-unified")
+    os.system("git remote update")
 
 def clone_dot():
     os.system("git clone https://github.com/dothq/browser dot")
