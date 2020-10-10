@@ -19,7 +19,7 @@ start_py() {
     if which $py_bin > /dev/null 2>&1
     then
         info "Cloning..."
-        exec $py_bin clone.py
+        exec $py_bin $(pwd)/clone.py
     else
         throw "You will need '$py_bin' installed for this script to run."
     fi
