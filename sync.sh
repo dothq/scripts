@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cd browser/dot
+cd dot
 
 copy() {
     echo "Syncing $1..."
