@@ -5,7 +5,7 @@ cd dot
 copy() {
     echo "Syncing $1..."
 
-    ln -s "$1" "../firefox/$1"
+    ln -sf "$1" "../firefox/$1"
 }
 
 for f in $(find . -not \( -path ./.git -prune \) -not \( -path ./.hg -prune \) -name '*'); do copy $f; done
