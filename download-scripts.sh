@@ -1,7 +1,7 @@
 #!/bin/sh
 
 mkdir browser > /dev/null 2>&1
-cd browser
+cd $(pwd)/browser
 
 post_git_clone() {
     echo -e "\n\x1b[1;32mSUCCESS\x1b[0m Downloaded the build helper scripts.\n"
