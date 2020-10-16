@@ -1,5 +1,7 @@
 #!/bin/sh
 
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
 throw() {
     payload="$1"
 
@@ -19,7 +21,7 @@ start_py() {
     if which $py_bin > /dev/null 2>&1
     then
         info "Cloning..."
-        exec $py_bin $(pwd)/tools/clone.py
+        exec $py_bin "$DIR/clone.py"
     else
         throw "You will need '$py_bin' installed for this script to run."
     fi

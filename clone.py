@@ -20,8 +20,7 @@ def main():
     tip("For more information and help on building, check out the build workflow document.")
 
 def clone_firefox():
-    os.system("git clone https://github.com/dothq/ffr -b master firefox")
-    os.system("cd firefox && git remote set-url origin hg::https://hg.mozilla.org/mozilla-unified && git remote update")
+    os.system("git clone https://github.com/dothq/ffr firefox && cd firefox && git remote set-url origin hg::https://hg.mozilla.org/mozilla-unified && git remote update")
 
 def clone_dot():
     os.system("git clone https://github.com/dothq/browser dot")
